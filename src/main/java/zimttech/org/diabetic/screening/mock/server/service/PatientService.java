@@ -1,0 +1,25 @@
+package zimttech.org.diabetic.screening.mock.server.service;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import zimttech.org.diabetic.screening.mock.server.entity.Patient;
+import zimttech.org.diabetic.screening.mock.server.repository.PatientRepository;
+
+import java.util.List;
+
+@Service
+@Slf4j
+public class PatientService {
+
+    private final PatientRepository patientRepository;
+
+    @Autowired
+    public PatientService(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
+    }
+
+    public List<Patient> getAllPatients() {
+        return patientRepository.findAll();
+    }
+}
