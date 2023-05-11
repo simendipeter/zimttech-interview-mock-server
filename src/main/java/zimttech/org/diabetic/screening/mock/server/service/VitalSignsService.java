@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import zimttech.org.diabetic.screening.mock.server.entity.VitalSigns;
 import zimttech.org.diabetic.screening.mock.server.repository.VitalSignsRepository;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class VitalSignsService {
@@ -17,8 +19,8 @@ public class VitalSignsService {
         this.vitalSignsRepository = vitalSignsRepository;
     }
 
-    public VitalSigns saveVitalSign(VitalSigns vitalSigns){
-        return vitalSignsRepository.save(vitalSigns);
+    public List<VitalSigns> saveVitalSigns(List<VitalSigns> vitalSignsList){
+        return vitalSignsRepository.saveAll(vitalSignsList);
     }
 
 }

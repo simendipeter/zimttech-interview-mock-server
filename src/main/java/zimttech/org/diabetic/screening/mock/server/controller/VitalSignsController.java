@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import zimttech.org.diabetic.screening.mock.server.entity.VitalSigns;
 import zimttech.org.diabetic.screening.mock.server.service.VitalSignsService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/vital-signs")
+@RequestMapping("/api/v1")
 public class VitalSignsController {
 
     private final VitalSignsService vitalSignsService;
@@ -20,9 +22,9 @@ public class VitalSignsController {
         this.vitalSignsService = vitalSignsService;
     }
 
-    @PostMapping
-    public ResponseEntity<VitalSigns> saveVitalSign(@RequestBody VitalSigns vitalSigns) {
-        VitalSigns savedVitalSign = vitalSignsService.saveVitalSign(vitalSigns);
+    @PostMapping("/vitals")
+    public ResponseEntity<List<VitalSigns>> saveVitalSign(@RequestBody List<VitalSigns> vitalSigns) {
+        List<VitalSigns> savedVitalSign = vitalSignsService.saveVitalSigns(vitalSigns);
         return ResponseEntity.ok(savedVitalSign);
     }
 }

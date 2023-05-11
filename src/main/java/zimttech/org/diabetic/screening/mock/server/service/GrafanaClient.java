@@ -18,7 +18,7 @@ import java.util.Map;
 
 @Component
 public class GrafanaClient {
-    private static final String GRAFANA_URL = "http://localhost:3000/api/datasources/proxy/1/write";
+    private static final String GRAFANA_URL = "http://grafana:3000/api/datasources/proxy/1/write";
     private static final String GRAFANA_API_KEY = "eyJrIjoiOGgzZHV4UnQyd0l4NDBKZ3FjaE91MGM5bFFGQ2JTV0EiLCJuIjoiemltdHRlY2giLCJpZCI6MX0=";
 
     public void pushDataToGrafana(String metricName, List<Map<String, Object>> data) {

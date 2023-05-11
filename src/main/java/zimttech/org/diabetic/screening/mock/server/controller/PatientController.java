@@ -10,7 +10,7 @@ import zimttech.org.diabetic.screening.mock.server.service.PatientService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/api/v1/patients")
 public class PatientController {
 
     private final PatientService patientService;
